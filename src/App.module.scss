@@ -1,0 +1,9 @@
+@import './styles/colors';
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  background-color: $c-dark-blue;
+}
