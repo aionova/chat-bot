@@ -1,7 +1,6 @@
-import React, { FC } from "react";
-import {MessageTypeEnum} from "../types/MessageTypeEnum";
-
-type MessageDirection = "incoming" | "outgoing";
+import React, {FC} from "react";
+import {MessageTypeEnum} from "../../types/MessageTypeEnum";
+import styles from './MessageRow.module.scss';
 
 interface MessageProps {
     direction: MessageTypeEnum;
@@ -12,11 +11,10 @@ export const MessageRow: FC<MessageProps> = (props) => {
 
     return (
         <div
+            className={styles.messageRow}
             style={{
-                alignSelf: direction === "INCOMING" ? "flex-start" : "flex-end",
-                border: "1px solid black",
-                padding: 5,
-                borderRadius: 5
+                alignSelf: direction === MessageTypeEnum.INCOMING ? "flex-start" : "flex-end",
+                borderRadius: direction === MessageTypeEnum.INCOMING ? "3px 15px 15px 15px" : "15px 3px 15px 15px",
             }}
         >
             {props.children}

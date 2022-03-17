@@ -1,0 +1,8 @@
+@import '../../styles/colors';
+
+.messageRow {
+  color: $c-light-gray;
+  background-color: $c-gray;
+  border: 1px solid $c-medium-blue;
+  padding: 5px;
+}

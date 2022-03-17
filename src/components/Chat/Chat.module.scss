@@ -1,0 +1,18 @@
+@import '../../styles/colors';
+
+.chat {
+  background-color: $c-blue;
+  border: 1px solid $c-gray;
+  border-radius: 5px;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+  }
+}

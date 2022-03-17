@@ -1,9 +1,11 @@
 @import './styles/colors';
 
-* {
-  box-sizing: border-box;
-}
-
 .app {
+  min-height: 100vh;
+  padding: 50px;
   background-color: $c-dark-blue;
+
+  @media (max-width: 768px) {
+    padding: 10px
+  }
 }

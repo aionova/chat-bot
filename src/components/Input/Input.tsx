@@ -1,12 +1,9 @@
 import React, { FC, FormEventHandler, useState } from "react";
-import {addIncomingAction} from "../store/actions";
+import {addOutcomingAction} from "../../store/actions";
 import {useDispatch} from "react-redux";
+import styles from './Input.module.scss';
 
-interface InputProps {
-    onSubmit?: (message: string) => void;
-}
-
-export const Input: FC<InputProps> = (props) => {
+export const Input: FC = () => {
     const [message, setMessage] = useState("");
     const dispatch = useDispatch();
 
@@ -14,26 +11,29 @@ export const Input: FC<InputProps> = (props) => {
         e.preventDefault();
         e.stopPropagation();
         if (message !== "") {
-            props.onSubmit?.(message);
-            dispatch(addIncomingAction(message));
+            dispatch(addOutcomingAction(message));
             setMessage("");
         }
     };
 
     return (
         <form
-            style={{ display: "flex", alignItems: "stretch" }}
+            className={styles.form}
             onSubmit={handleSubmit}
         >
             <input
-                style={{ flexGrow: 1, border: "1px solid black", padding: 5 }}
+                className={styles.input}
                 placeholder="type here"
                 autoFocus
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
             />
-            <button style={{ border: "1px solid black", padding: 5 }} type="submit">
-                submit
+            <button className={styles.button} type="submit">
+                <img
+                    src="./sendLogo.png"
+                    alt="send button"
+                    className={styles.sendImg}
+                />
             </button>
         </form>
     );

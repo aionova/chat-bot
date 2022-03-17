@@ -1,0 +1,40 @@
+@import '../../styles/colors';
+
+.form {
+  display: flex;
+  align-items: stretch;
+}
+
+.input {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background-color: $c-medium-blue;
+  flex-grow: 1;
+  margin: 3px;
+  padding: 10px;
+  color: $c-light-gray;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $c-gray;
+  }
+}
+
+.button {
+  background-color: $c-blue;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.sendImg {
+  display: block;
+  object-fit: contain;
+  height: 30px;
+  width: 30px;
+
+  &:hover, &:active {
+    opacity: 90%;
+  }
+}

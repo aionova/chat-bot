@@ -7,7 +7,7 @@ export const History: FC = (props) => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-                border: "1px solid black",
+                gap: 10,
                 padding: 10,
                 flexGrow: 1,
                 overflow: "auto"
